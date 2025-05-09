@@ -8,6 +8,8 @@ public class BasePage {
     WebDriver driver;
     WebDriverWait wait;
 
+
+    // Bu şu anlama gelir: BasePage sınıfını kullanmak (veya ondan miras almak) isteyen her sınıf, bir WebDriver nesnesi göndermek zorundadır.
     public BasePage(WebDriver driver){
         this.driver = driver;
     }

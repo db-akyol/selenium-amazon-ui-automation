@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginScreen extends BasePage {
 
-    By emailInputLocator = By.id("ap_email");
+    By emailInputLocator = By.id("ap_email_login");
     By loginButtonLocator = By.id("continue");
     By passwordInputLocator = By.id("ap_password");
     By loginButtonLocator2 = By.id("signInSubmit");

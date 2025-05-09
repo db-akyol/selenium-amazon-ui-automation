@@ -9,7 +9,7 @@ public class HomePage extends BasePage {
     By cartCountLocator = By.cssSelector("#nav-cart-count");
     By cartContainerLocator = By.cssSelector("#nav-cart-count-container");
     By acceptCookiesLocator = By.id("sp-cc-accept");
-
+    By leftSideBarLocator = By.id("nav-hamburger-menu");
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -31,6 +31,10 @@ public class HomePage extends BasePage {
 
     public void goToCart() {
         click(cartCountLocator);
+    }
+
+    public void clickLeftBar(){
+        click(leftSideBarLocator);
     }
 
     private int getCartCount(){
