@@ -24,7 +24,7 @@ public class Test_Login_LogOut extends BaseTest{
     @Order(2)
     public void login_email(){
         loginScreen = new LoginScreen(driver);
-        loginScreen.loginEmail("gs.deniz.21@gmail.com");
+        loginScreen.loginEmail(System.getenv("AMAZON_EMAIL"));
         Assertions.assertTrue(loginScreen.isOnLoginScreen(),
                 "Not on login screen page");
 
@@ -34,7 +34,7 @@ public class Test_Login_LogOut extends BaseTest{
     @Test
     @Order(3)
     public void login_password(){
-        loginScreen.loginPassword("***PAROLA-KALDIRILDI***");
+        loginScreen.loginPassword(System.getenv("AMAZON_PASSWORD"));
         Assertions.assertTrue(loginScreen.isOnLoginScreen(),
                 "Not on password screen page");
     }
