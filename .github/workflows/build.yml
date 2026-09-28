@@ -1,0 +1,26 @@
+name: Build
+
+# Testler canli amazon.com.tr'ye karsi kostugu ve bot korumasina takildigi icin
+# CI'da yalnizca derleme dogrulanir; testler lokal olarak calistirilir.
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: maven
+
+      - name: Compile sources and tests
+        run: mvn -B test-compile
